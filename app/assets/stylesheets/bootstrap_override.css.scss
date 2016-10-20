@@ -1,0 +1,129 @@
+$primary-background-color: #082B46;
+$secondary-background-color: #50697e;
+
+body {
+  margin-top: 50px;
+  height: 100%;
+  margin-bottom: 80px;
+}
+
+.navbar {
+  background-color: $primary-background-color;
+}
+
+.main-image {
+  background-image: url('/assets/LV_main_image.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 430px;
+  color: white;
+  padding: 60px;
+  padding-left: 270px;
+}
+
+.job-list {
+  width: 100%;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#job-list-header {
+  text-align: center;
+  background-color: #082B46;
+  color: white;
+}
+
+#job-list-footer {
+  text-align: right;
+  border-top: solid;
+}
+
+#job-card {
+  width: 80%;
+  margin: auto;
+}
+
+#sign-in-form {
+  width: 70%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+#job-create-form {
+  margin-top: 80px;
+}
+
+#job-show-footer {
+  height: 130px;
+  
+}
+
+#edit-user-block {
+  width: 90%;
+  margin-top: 80px;
+}
+
+#job-seeker-profile {
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.tab-content-margin {
+  margin-top: 30px;
+  margin-left: 15px;
+  width: 90%;
+}
+
+/************************************
+Edit/registration form for job_seeker
+*************************************/
+
+.page-margins {
+  margin-left: 3.0em;
+  margin-right: 3.0em;
+}
+
+.jumbotron-styling {
+  margin-top: 20px;
+  background: $secondary-background-color;
+  height: 10em;
+  padding-top: 1.5em;
+  border-radius: 8px;
+  color: white;
+
+}
+
+.nav-pill-styling {
+ background-color: #082B46; 
+}
+
+.profile-form {
+  background: #ecf0f1;
+  border-radius: 8px;
+}
+
+.review-card-header {
+  background-color: lightblue;
+}
+
+
+/*.page-footer {
+  line-height: 70%;
+  padding: 2em 2em;
+  background-color: #F2F2F2;
+  font-size: 85%;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  margin-bottom: 0;
+}
+*/
+
+
+
+
+
+
+

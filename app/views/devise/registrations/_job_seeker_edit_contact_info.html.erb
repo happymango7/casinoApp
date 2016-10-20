@@ -1,0 +1,95 @@
+<div class="row">       
+  <div class="input-group col-sm-5">
+    <%= job_seeker_form.label :first_name, "First Name" %></br>
+    <%= job_seeker_form.text_field :first_name, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-1">
+    <%= job_seeker_form.label :middle_initial, "M.I." %></br>
+    <%= job_seeker_form.text_field :middle_initial, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-5">
+   <%= job_seeker_form.label :last_name, "Last Name" %>
+    <%= job_seeker_form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-1">
+   <%= job_seeker_form.label :suffix, "Suffix" %>
+    <%= job_seeker_form.text_field :suffix, class: "form-control" %>
+  </div>
+</div><!-- close row -->
+
+<div class="row m-t-3"> 
+  <div class="form-group col-sm-7">
+   <%= job_seeker_form.label :address_line_1 %>
+    <%= job_seeker_form.text_field :address_line_1, class: "form-control" %>
+  </div>
+</div><!-- close row -->
+
+<div class="row"> 
+  <div class="form-group col-sm-7">
+   <%= job_seeker_form.label :address_line_2 %>
+    <%= job_seeker_form.text_field :address_line_2, class: "form-control" %>
+  </div>
+</div><!-- close row -->
+
+<div class="row"> 
+  <div class="form-group col-sm-6">
+   <%= job_seeker_form.label :city %>
+    <%= job_seeker_form.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-2">
+   <%= job_seeker_form.label :state %>
+    <%= job_seeker_form.text_field :state, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-4">
+   <%= job_seeker_form.label :postal_code %>
+    <%= job_seeker_form.text_field :postal_code, class: "form-control" %>
+  </div>
+</div><!-- close row -->
+
+<div class="row m-t-2"> 
+  <div class="form-group col-sm-6">
+   <%= job_seeker_form.label :primary_phone %>
+    <%= job_seeker_form.text_field :primary_phone, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-sm-6">
+   <%= job_seeker_form.label :secondary_phone %>
+    <%= job_seeker_form.text_field :secondary_phone, class: "form-control" %>
+  </div>
+</div><!-- close row -->
+
+<div class="row m-t-2"> 
+  <div class="form-group col-sm-6">
+   <%= job_seeker_form.label :username %>
+    <%= job_seeker_form.text_field :username, class: "form-control" %>
+    <small class="text-muted">Provide a username if you would like to remain anonymous for employer searches.</small>
+  </div>
+</div><!-- close row -->
+
+<!-- Need to convert this to form_for.select -->
+<div class="row m-t-3">
+  <div class="dropdown open col-sm-6">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      How did you hear about us?
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <a class="dropdown-item" href="#">Google search</a>
+      <a class="dropdown-item" href="#">Youtube video</a>
+      <a class="dropdown-item" href="#">Something else...</a>
+    </div>
+  </div>
+</div>
+
+<div class="row m-t-2">
+  <div class="form-group col-sm-12 text-xs-center">  
+    <%= job_seeker_form.check_box :confirm_tos_pp, class: "checkbox-inline" %>
+    <%= job_seeker_form.label :confirm_tos_pp do
+      "I have read and agreed to the #{link_to 'Job Seeker Terms of Service', '#'} and to the #{link_to 'Privacy Policy', '#'}".html_safe
+      end %>
+  </div>
+</div><!-- close row -->

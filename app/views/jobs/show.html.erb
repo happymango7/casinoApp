@@ -1,0 +1,46 @@
+
+<div class="container">
+  
+  <div class="card job-list">
+    <div class="card-block card-header">
+      <h4 class="card-title"><%= @job.title %></h4>
+      <h5 class="text-muted"><%= @job.company %></h6>
+      <h5 class="text-muted"><%= @job.city %>, <%= @job.state %></h6>
+    </div>
+
+    <div class="card-block" >
+      
+        <%= simple_format(@job.description) %>
+      
+    </div>
+
+    <div class="card-block card-footer" id="job-show-footer">
+      <div class="row">
+        
+
+        <div class="col-sm-4 m-t-2" >
+          <% if user_signed_in? && (@employer == current_user) %>
+            <%= link_to "< Back to My Jobs", user_jobs_path(@employer), class: "btn btn-primary" %></br></br>
+          <% else %>
+            <%= link_to "<< Back to Job Search", jobs_path, class: "btn btn-primary text-xs-left" %>
+          <% end %>
+        </div>
+    
+        <div class="col-sm-4 text-xs-center m-t-2">
+          <% if !user_signed_in? || current_user.job_seeker? %>
+            <%= link_to "Apply for this Job!", new_job_application_path(@job, @application), class: "btn btn-success" %>
+          <% end %>
+        </div>
+        
+        <div class="col-sm-4 text-xs-right m-t-2">
+          <% if user_signed_in? && @employer == current_user %>
+            <%= link_to "Edit This Post", edit_job_path(@job), class: "btn btn-success" %>
+          <% end %>
+        </div>
+
+      </div><!-- close row -->         
+    </div><!-- close card-block card-footer -->
+    
+  </div><!-- close card -->
+</div><!-- close container -->
+

@@ -1,0 +1,43 @@
+<div class="container">
+  
+  <div class="card job-list">
+
+    <div class="card-block" id="job-list-header">
+      <h4 class="card-title"><%= @job.title %></h4>
+      <h5 class="text-muted"><%= @job.company %></h6>
+      <h5 class="text-muted"><%= @job.city %>, <%= @job.state %></h6>
+    </div>
+
+    <div class="card-block card-header">
+      <h4 class="card-title"><%= @application.first_name %> <%= @application.last_name %></h4>
+      <h5 class="text-muted"><%= @application.email %></h6>
+      <h5 class="text-muted"><%= @application.created_at %></h6>
+    </div>
+
+    <div class="card-block" >
+      
+        <%= simple_format(@application.message) %>
+      
+    </div>
+
+    <div class="card-block card-footer" id="job-show-footer">
+      <div class="row">
+      
+      <div class="col-sm-4 m-t-2" >
+        <% if current_user.employer? %>
+          <%= link_to "<< Back to My Applications List", job_applications_path(@job), class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to "<< Back to Job List", jobs_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
+      <div class="col-sm-4 text-xs-center m-t-2">
+        <% if @application.user == current_user %>
+          <%= link_to "Delete this Application", "#", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+      
+    </div>
+
+  </div><!-- close card -->
+</div><!-- close container -->

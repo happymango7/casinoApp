@@ -1,0 +1,47 @@
+
+
+<div class="container">
+  <div class="card job-list">
+    
+    <div class="card-block" id="job-list-header">
+      <h3>All Jobs List<h3>
+    </div>
+
+    <table class="table card-block table-hover">
+    
+      <thead class="thead-default">
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Employer Email</th>
+          <th>Title</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Date Posted</th>
+          <th class="text-xs-center">Action</th>
+        </tr>
+      </thead>
+      
+      <tbody class="card-block">
+        <% @jobs.each do |job| %>
+          <% employer = job.users.employer.take %>
+          <tr>
+            <td><%= job.id %></td>
+            <td><%= job.company %></td>
+            <td><%= employer.nil? ? "no email" : employer.email %>
+            <td><%= job.title %></td>
+            <td><%= job.city %></td>
+            <td><%= job.state %></td>
+            <td><%= distance_of_time_in_words(Time.now, job.created_at) %> ago</td>
+            <td><h5 class="text-xs-center"><%= link_to "Show", job_path(job.id), class: "label label-pill label-primary"%></h5></td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+
+

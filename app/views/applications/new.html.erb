@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card job-list" id="job-create-form">
+    <div class="card-block" id="job-list-header">
+      <h3>Apply for a Job</h3>
+    </div>
+
+    <div class="card-block card-header">
+      <h4 class="card-title"><%= @job.title %></h4>
+      <h5 class="text-muted"><%= @job.company %></h6>
+      <h5 class="text-muted"><%= @job.city %>, <%= @job.state %></h6>
+    </div>
+
+      <%= render 'form' %>
+    
+  </div>
+</div>

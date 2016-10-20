@@ -1,0 +1,53 @@
+<div class="main-image hidden-sm">
+  
+  <h1>Casinobug</h1>
+  <h5>The easiest place to find casino jobs!</h5>
+  
+  <% if not user_signed_in? %>
+    <p><a class="btn btn-primary btn-lg active" href="<%= new_user_registration_path %>" role="button">Sign Up Now! &raquo;</a></p>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="card-deck-wrapper m-t-3">
+    <div class="card-deck">
+      
+      <div class="card text-xs-center" style="border: none">
+        <div style="font-size: 6em;">
+          <i class="fa fa-search card-img-top" alt="Card image cap"></i>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Easy Search</h4>
+          <p class="card-text">We make it easy for you to search through our list of available jobs.  Our filtered search is designed specifically for the casino gaming industry.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div><!-- close card -->
+
+      <div class="card text-xs-center" style="border: none">
+        <div style="font-size: 6em;">
+          <i class="fa fa-paper-plane card-img-top" alt="Card image cap"></i>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Get Updates</h4>
+          <p class="card-text">Don't have the time to search our site every week?  Use the notifications settings in your profile and let us email you only the jobs you would be interested in.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div><!-- close card -->
+
+      <div class="card text-xs-center" style="border: none">
+        <div style="font-size: 6em;">
+          <i class="fa fa-upload card-img-top" alt="Card image cap"></i>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Upload Your Resume</h4>
+          <p class="card-text">Fill out your profile, upload your resume, and let the casinos come searching for you! Our profile form has been tailored for this unique industry, and that's why casinos love looking for job seekers on our site.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div><!-- close card -->
+
+    </div><!-- close card-deck -->
+  </div><!-- close card-deck-wrapper -->
+</div><!-- close container -->
+
+
+

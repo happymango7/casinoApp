@@ -1,0 +1,153 @@
+
+<div class="card m-a-3">
+  <div class="card-header review-card-header">
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>1. Sign In</h5>
+      </div>
+      <div class="col-sm-offset-8 col-sm-1">
+        <%= link_to "javascript:goPage(0)", class: "btn btn-primary" do %>
+          <i class="fa fa-pencil"></i> &nbsp;Edit
+        <% end %>
+      </div>
+    </div><!-- close row -->
+  </div><!-- close card-header -->
+  
+  <div class="list-group">
+    <div class="list-group-item">
+      <div class="row">
+        <%= f.label :email, "Email:", class: "col-sm-2 text-xs-right" %>
+        <div class="col-sm-8">
+          <%= resource.email %>
+        </div>
+      </div>
+      
+      <div class="row">
+        <%= f.label :password, "Password:", class: "col-sm-2 text-xs-right" %>
+        <div class="col-sm-8">
+          <p>****************</p>
+        </div>
+      </div>
+
+    </div><!-- close list-group-item -->
+  </div><!-- close list-group -->
+</div>
+
+
+<div class="card m-a-3">
+  <div class="card-header review-card-header">
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>2. Contact Info</h5>
+      </div>
+      <div class="col-sm-offset-8 col-sm-1">
+        <%= link_to "javascript:goPage(1)", class: "btn btn-primary" do %>
+          <i class="fa fa-pencil"></i> &nbsp;Edit
+        <% end %>
+      </div>
+    </div><!-- close row -->
+  </div><!-- close card-header -->
+  
+  <div class="list-group">
+    <div class="list-group-item">
+      
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-2">
+          First Name:  <span id="user_job_seeker_attributes_first_name_preview"></span>
+        </div>
+        <div class="col-sm-1">
+           M.I. :  <span id="user_job_seeker_attributes_middle_initial_preview"></span>
+        </div>
+        <div class="col-sm-2">
+          Last Name:  <span id="user_job_seeker_attributes_last_name_preview"></span>
+        </div>
+        <div class="col-sm-1">
+          Suffix:  <span id="user_job_seeker_attributes_suffix_preview"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-3">
+          Address 1:  <span id="user_job_seeker_attributes_address_line_1_preview"></span>
+        </div>
+        <div class="col-sm-5">
+          Address 2:  <span id="user_job_seeker_attributes_address_line_2_preview"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-3"> 
+          City :  <span id="user_job_seeker_attributes_city_preview"></span>
+        </div>
+        <div class="col-sm-2">
+          State:  <span id="user_job_seeker_attributes_state_preview"></span>
+        </div>
+
+        <div class="col-sm-2">
+          Postal Code:  <span id="user_job_seeker_attributes_postal_code_preview"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-3">
+          Phone 1:  <span id="user_job_seeker_attributes_primary_phone_preview"></span>
+        </div>
+        <div class="col-sm-3">
+          Phone 2:  <span id="user_job_seeker_attributes_secondary_phone_preview"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-3" >
+          User Name :   <span id="user_job_seeker_attributes_username_preview"></span>
+        </div>
+      </div>
+
+    </div><!-- close list-group-item -->
+  </div><!-- close list-group -->
+</div>
+
+<div class="card m-a-3">
+  <div class="card-header review-card-header">
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>3. Qualifications</h5>
+      </div>
+      <div class="col-sm-offset-8 col-sm-1">
+        <%= link_to "javascript:goPage(2)", class: "btn btn-primary" do %>
+          <i class="fa fa-pencil"></i> &nbsp;Edit
+        <% end %>
+      </div>
+    </div><!-- close row -->
+  </div><!-- close card-header -->
+  
+  <div class="list-group">
+    <div class="list-group-item">
+      <div>
+        Resume File Name : <span id="user_job_seeker_attributes_document_preview"></span>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="card m-a-3">
+  <div class="card-header review-card-header">
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>4. Notifications</h5>
+      </div>
+      <div class="col-sm-offset-8 col-sm-1">
+        <%= link_to "javascript:goPage(3)", class: "btn btn-primary" do %>
+          <i class="fa fa-pencil"></i> &nbsp;Edit
+        <% end %>
+      </div>
+    </div><!-- close row -->
+  </div><!-- close card-header -->
+  
+  <div class="card-block">
+  </div>
+</div>
+
+
+<div class="row">
+  <p class="text-xs-center">I have no further changes to my profile. Everything above looks great!</p>
+  <div class="text-xs-center"><%= f.submit "Save My Profile", class: "btn btn-success" %>
+  </div>
+</div>

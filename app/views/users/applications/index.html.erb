@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card job-list">
+    
+    <div class="card-block" id="job-list-header">
+      <h3>List of My Job Applications<h3>
+    </div>
+
+    <table class="table card-block table-hover">
+    
+      <thead class="thead-default">
+        <tr>
+          <th>#</th>
+          <th>Company Name</th>
+          <th>Title</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Date Posted</th>
+          <th>Date Applied</th>
+          <th class="text-xs-center">Action</th>
+        </tr>
+      </thead>  
+      
+      <tbody class="card-block">
+        <% @applications.each do |application| %>   
+          <tr>
+            <td><%= application.job.id %></td>
+            <td><%= application.job.company %></td>
+            <td><%= application.job.title %></td>
+            <td><%= application.job.city %></td>
+            <td><%= application.job.state %></td>
+            <td><%= distance_of_time_in_words(Time.now, application.job.created_at) %> ago</td>
+            <td><%= distance_of_time_in_words(Time.now, application.created_at) %> ago</td>
+            <td><h5 class="text-xs-center"><%= link_to "Show", user_application_path(current_user, application.id), class: "label label-pill label-primary"%></h5></td>
+            
+          </tr>
+        <% end %>
+      </tbody>
+      
+    </table>
+    
+    <div class="card-block text-xs-left" id="job-list-footer">
+      <%= link_to "< Back to Job Search", jobs_path, class: "btn btn-primary" %>
+    </div>
+
+  </div>
+</div>

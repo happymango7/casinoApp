@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card" id="sign-in-form">
+    <div class="card-block" id="job-list-header">
+      <h3>Sign Up</h3>
+    </div>
+
+    <div class="card-block">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group row">
+          <div class="col-sm-5">
+            <%= f.radio_button :role, 'job_seeker', checked: true %>
+            <%= f.label :role, 'Job Seeker (looking for a job)', :value => 'job_seeker' %>
+          </div>
+          
+          <div class="col-sm-5">
+            <%= f.radio_button :role, 'employer'%>
+            <%= f.label :role, 'Employer (verification required)', :value => 'employer' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card-block">
+      <h6>Already registered?</h6>     
+        <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>

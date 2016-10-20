@@ -1,0 +1,45 @@
+<header>
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <%= link_to "Casinobug", root_path, class: "navbar-brand" %>
+      
+        <% if user_signed_in? %>
+          <ul class="nav navbar-nav pull-md-left">
+            <li class="nav-item"><%= link_to "Search Jobs", jobs_path, class: "nav-link" %></li> 
+            
+            <% if current_user.employer? %>
+              <li class="nav-item"><%= link_to "My Jobs", user_jobs_path(current_user), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Candidates", "#", class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Post a Job", new_job_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "About Us", root_path, class: "nav-link" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "My Applications", user_applications_path(current_user), class: "nav-link" %></li>
+              <li class="nav-item hidden-md-down"><%= link_to "My Profile", "#", class: "nav-link" %></li>
+              <li class="nav-item hidden-md-down"><%= link_to "About Us", root_path, class: "nav-link" %></li>
+            <% end %>
+          </ul>
+
+          <ul class="nav navbar-nav pull-sm-right">
+            <li class="nav-item"><%= link_to current_user.email, edit_user_registration_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, class: "nav-link", :method=>'delete' %></li>
+          </ul>
+
+        <% else %>
+          <ul class="nav navbar-nav pull-md-left">
+            <li class="nav-item"><%= link_to "Search Jobs", jobs_path, class: "nav-link" %></li>
+            
+            <li class="nav-item"><%= link_to "About Us", root_path, class: "nav-link" %></li>
+          </ul>
+          <ul class="nav navbar-nav pull-md-right">
+            <li class="nav-item"><%= link_to 'Sign in', new_user_session_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %></li>
+          </ul>
+        <% end %>
+
+    </nav>
+  </div>
+</header>
+
+
+
+

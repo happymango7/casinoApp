@@ -1,0 +1,51 @@
+
+
+<div class="container">
+  <div class="card job-list">
+    
+    <div class="card-block" id="job-list-header">
+      <h3>My Jobs List<h3>
+    </div>
+
+    <table class="table card-block table-hover">
+    
+      <thead class="thead-default">
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Email</th>
+          <th>Title</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Date Posted</th>
+          <th class="text-xs-center">Action</th>
+          <th class="text-xs-center">Applications</th>
+        </tr>
+      </thead>
+      
+      <tbody class="card-block">
+        <% @jobs.each do |job| %>   
+          <tr>
+            <td><%= job.id %></td>
+            <td><%= job.company %></td>
+            <td><%= job.users.employer.take.email %></td>
+            <td><%= job.title %></td>
+            <td><%= job.city %></td>
+            <td><%= job.state %></td>
+            <td><%= distance_of_time_in_words(Time.now, job.created_at) %> ago</td>
+            <td><h5 class="text-xs-center"><%= link_to "Show", user_job_path(current_user, job.id), class: "label label-pill label-primary"%></h5></td>
+            <td><h5 class="text-xs-center"><%= link_to job.applications.joins(:user).where(users: { role: 2 }).count, job_applications_path(job.id), class: "label label-pill label-primary"%></h5></td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+
+    </table>
+    
+    <div class="card-block" id="job-list-footer">
+      <%= link_to "Create a New Job Post", new_job_path, class: "btn btn-success" %>
+    </div>
+
+  </div>
+</div>
+
